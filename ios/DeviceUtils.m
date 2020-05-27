@@ -10,7 +10,7 @@
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
-@implementation DeviceUtils;
+@implementation RNHPDeviceUtils;
 
 + (NSString *)platform
 {
@@ -27,12 +27,12 @@
 {
     NSString *platform = [self platform];
     int deviceVersion = 0;
-    
+
     if ([platform containsString:deviceType]) {
         NSString *platformSplit = [platform componentsSeparatedByString:@","][0];
         NSCharacterSet *setToRemove = [NSCharacterSet decimalDigitCharacterSet];
         NSCharacterSet *setToKeep = [setToRemove invertedSet];
-        
+
         NSString *platformVersion = [[platformSplit componentsSeparatedByCharactersInSet:setToKeep]
          componentsJoinedByString:@""];
         deviceVersion = [platformVersion intValue];

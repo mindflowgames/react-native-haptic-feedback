@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DeviceUtils : NSObject
+@interface RNHPDeviceUtils : NSObject
 
 + (NSString *) platform;
 + (int)deviceVersion:(NSString*)deviceType;
